@@ -47,7 +47,7 @@ jobs:
       with:
         protocol: http
         port: 8080
-    - name: Set envs:
+    - name: Set envs
       run: echo "TestingDomain=${{ngrok.outputs.server}}" >> $GITHUB_ENV
     - name: Clone acmetest
       run: cd .. && git clone https://github.com/acmesh-official/acmetest.git  && cp -r acme.sh acmetest/

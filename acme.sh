@@ -5823,7 +5823,7 @@ _deactivate() {
     _URL_NAME="uri"
   fi
 
-  entries="$(echo "$response" | tr '][' '=' | _egrep_o "challenges\": *=[^=]*=" | tr '}{' '\n' | grep "\"status\": *\"valid\"")"
+  entries="$(echo "$response" | tr '][' '==' | _egrep_o "challenges\": *=[^=]*=" | tr '}{' '\n' | grep "\"status\": *\"valid\"")"
   if [ -z "$entries" ]; then
     _info "No valid entries found."
     if [ -z "$thumbprint" ]; then

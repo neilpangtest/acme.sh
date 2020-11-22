@@ -57,7 +57,6 @@ jobs:
         nat: |
           "8080": "80"
         prepare: pkgutil -y -i socat curl
-        usesh: true
         run: |
           cd ../acmetest && ./letest.sh
 

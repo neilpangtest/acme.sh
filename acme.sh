@@ -2086,7 +2086,7 @@ _send_signed_request() {
 
     _debug2 original "$response"
     if echo "$responseHeaders" | grep -i "Content-Type: *application/json" >/dev/null 2>&1; then
-      response="$(echo "$response" | _normalizeJson | _json_decode)"
+      response="$(echo "$response" | _json_decode | _normalizeJson)"
     fi
     _debug2 response "$response"
 
